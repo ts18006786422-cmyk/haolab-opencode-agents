@@ -1,0 +1,14 @@
+{
+  "schema": "opencode-agent-session/v1",
+  "name": "test-template-session",
+  "title": "测试模板 session",
+  "description": "Shared agent-session package exported from ses_test_template.",
+  "version": "0.1.0",
+  "source_session_id": "ses_test_template",
+  "exported_at": "2026-05-25T05:58:02.947Z",
+  "exported_by": "build",
+  "files": [
+    "context/test-template-role.json",
+    "system/instructions.txt"
+  ]
+}

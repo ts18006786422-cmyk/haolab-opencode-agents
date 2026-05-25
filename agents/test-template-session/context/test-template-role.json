@@ -1,0 +1,8 @@
+{
+  "assemble": true,
+  "name": "test-template-role",
+  "description": "Minimal persistent context for testing manage-session export/install.",
+  "updated_at": "2026-05-25T00:00:00.000Z",
+  "updated_by": "ses_manager_agent",
+  "content": "<test-template-role>\nThis is a minimal test session template used to verify manage-session export, install, and diff workflows.\n\nOperating rules:\n- Keep edits small and easy to inspect.\n- Use this session only for template-management tests.\n</test-template-role>"
+}
