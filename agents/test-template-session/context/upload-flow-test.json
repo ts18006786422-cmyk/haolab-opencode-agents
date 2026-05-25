@@ -1,0 +1,10 @@
+{
+  "assemble": true,
+  "name": "upload-flow-test",
+  "description": "Small context change used to verify uploading test-template-session updates.",
+  "updated_at": "2026-05-25T00:00:00.000Z",
+  "updated_by": "ses_manager_agent",
+  "reason": "Verify that an installed manager subagent can upload an updated test-template-session template.",
+  "position": "prefix",
+  "content": "Context file: upload-flow-test\nDescription: Small context change used to verify uploading test-template-session updates.\nLast updated by: ses_manager_agent\n\n<upload-flow-test>\nThis session contains a small context change for validating the test-template-session upload workflow.\n</upload-flow-test>"
+}
