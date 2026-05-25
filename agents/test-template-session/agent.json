@@ -3,10 +3,10 @@
   "name": "test-template-session",
   "title": "Source test session id (@general subagent)",
   "description": "Shared agent-session package exported from ses_1a180e918ffeHYUVbOS2uj7KYe.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "source_session_id": "ses_1a180e918ffeHYUVbOS2uj7KYe",
   "exported_at": "2026-05-25T09:55:24.309Z",
-  "exported_by": "general",
+  "exported_by": "opencode-test",
   "files": [
     "context/test-template-role.json",
     "context/upload-flow-test.json",
