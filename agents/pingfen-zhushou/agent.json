@@ -1,0 +1,20 @@
+{
+  "schema": "opencode-agent-session/v1",
+  "name": "pingfen-zhushou",
+  "title": "评分助手",
+  "description": "Reusable scoring assistant template for standardized AI rating, expert sampling, and agreement analysis workflows.",
+  "version": "0.1.0",
+  "source_session_id": "ses_1a06be178ffeZOlFZpjccSeDPt",
+  "exported_at": "2026-05-26T08:41:00.222Z",
+  "exported_by": "Tong",
+  "files": [
+    "assemble-schema.md",
+    "assemble.ts",
+    "rating_config.template.json",
+    "rating_workflow.json",
+    "resources/agreement_analysis.py",
+    "resources/rating_engine.py",
+    "system/README.md",
+    "tool/README.md"
+  ]
+}
