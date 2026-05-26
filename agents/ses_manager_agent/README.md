@@ -1,6 +1,6 @@
 # ses_manager_agent
 
-Version: 0.1.1
+Version: 0.1.2
 
 Manager session template for installing, exporting, and uploading opencode session templates.
 
@@ -34,6 +34,10 @@ Use this template for a global manager session that maintains session-local cont
 - The upload workflow uses GitHub branches and PRs; template changes are not available on `main` until reviewed and merged.
 
 ## Changelog
+
+### 0.1.2 - 2026-05-26
+
+- Added an install workflow step to dispatch frontend navigation to `/classic` after installing a template so the desktop UI refreshes project/session visibility.
 
 ### 0.1.1 - 2026-05-26
 
