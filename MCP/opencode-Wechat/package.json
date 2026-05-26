@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "opencode-wechat",
+  "version": "0.1.0",
+  "description": "MCP server for Weixin iLink Bot integration with opencode Desktop sidecar delivery.",
+  "type": "module",
+  "bin": {
+    "opencode-wechat": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "opencode.example.jsonc"
+  ],
+  "scripts": {
+    "build": "bun build src/index.ts --target bun --format esm --banner '#!/usr/bin/env bun' --outfile dist/index.js && chmod +x dist/index.js",
+    "prepack": "bun run build",
+    "typecheck": "bun --check src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "license": "MIT"
+}

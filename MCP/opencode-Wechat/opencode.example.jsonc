@@ -1,0 +1,18 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "opencode-wechat": {
+      "type": "local",
+      "command": ["bunx", "opencode-wechat"],
+      "enabled": true,
+      "environment": {
+        "ILINK_STATE_DIR": ".opencode/ilink-weixin",
+        "ILINK_INBOX_DIR": ".opencode/ilink-weixin/inbox",
+        "ILINK_OPENCODE_SESSION_ID": "{env:ILINK_OPENCODE_SESSION_ID}",
+        "ILINK_OPENCODE_AGENT": "{env:ILINK_OPENCODE_AGENT}",
+        "ILINK_OPENCODE_DIRECTORY": "{env:ILINK_OPENCODE_DIRECTORY}",
+        "ILINK_OPENCODE_SIDECAR": "{env:ILINK_OPENCODE_SIDECAR}"
+      }
+    }
+  }
+}
