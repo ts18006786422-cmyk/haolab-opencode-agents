@@ -8,7 +8,7 @@ Requires Bun because the package entrypoint uses the Bun runtime.
 
 The package is published on npm as `haolab-opencode-wechat`.
 
-Project config example:
+Global config example (`~/.config/opencode/opencode.jsonc`):
 
 ```jsonc
 {
@@ -18,8 +18,8 @@ Project config example:
       "command": ["bunx", "haolab-opencode-wechat"],
       "enabled": true,
       "environment": {
-        "ILINK_STATE_DIR": ".opencode/ilink-weixin",
-        "ILINK_INBOX_DIR": ".opencode/ilink-weixin/inbox",
+        "ILINK_STATE_DIR": "/Users/lose/.opencode/ilink-weixin",
+        "ILINK_INBOX_DIR": "/Users/lose/.opencode/ilink-weixin/inbox",
         "ILINK_BOT_TOKEN": "{env:ILINK_BOT_TOKEN}",
         "ILINK_ACCOUNT_ID": "{env:ILINK_ACCOUNT_ID}",
         "ILINK_BASE_URL": "{env:ILINK_BASE_URL}",
@@ -43,6 +43,8 @@ If installing from a local tarball instead of npm:
 ```
 
 Restart opencode after changing config. Do not enable this package together with a local copy of the same MCP server, because both expose the same `ilink_*` tools and can share the same iLink state directory.
+
+Use absolute `ILINK_STATE_DIR` and `ILINK_INBOX_DIR` paths in global config when you want all projects to share one Weixin login. Use project-relative paths only when each project should have an isolated login and inbox.
 
 ## First login
 
@@ -108,8 +110,8 @@ using the Basic Auth credentials from `sidecar.json`.
 
 ## Environment
 
-- `ILINK_STATE_DIR`: credential and runtime state directory. Defaults to `.opencode/ilink-weixin`.
-- `ILINK_INBOX_DIR`: inbound media directory. Defaults to `.opencode/ilink-weixin/inbox`.
+- `ILINK_STATE_DIR`: credential and runtime state directory. Defaults to `.opencode/ilink-weixin`; use an absolute path in global config to share one login across projects.
+- `ILINK_INBOX_DIR`: inbound media directory. Defaults to `.opencode/ilink-weixin/inbox`; use an absolute path in global config to share one inbox across projects.
 - `ILINK_BOT_TOKEN`: optional iLink token override. Usually persisted by `ilink_login_wait` instead.
 - `ILINK_ACCOUNT_ID`: optional iLink bot account id override.
 - `ILINK_BASE_URL`: optional iLink API base URL. Defaults to `https://ilinkai.weixin.qq.com`.
