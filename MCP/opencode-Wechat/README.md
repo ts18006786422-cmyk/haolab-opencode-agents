@@ -13,7 +13,7 @@ Project config example:
   "mcp": {
     "opencode-wechat": {
       "type": "local",
-      "command": ["bunx", "opencode-wechat"],
+      "command": ["bunx", "haolab-opencode-wechat"],
       "enabled": true,
       "environment": {
         "ILINK_STATE_DIR": ".opencode/ilink-weixin",
@@ -31,7 +31,7 @@ Project config example:
 If installing from a local tarball before publishing:
 
 ```jsonc
-"command": ["bunx", "/absolute/path/to/opencode-wechat-0.1.0.tgz"]
+"command": ["bunx", "/absolute/path/to/haolab-opencode-wechat-0.1.0.tgz"]
 ```
 
 Restart opencode after changing config.

@@ -1,11 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "opencode-wechat",
+  "name": "haolab-opencode-wechat",
   "version": "0.1.0",
   "description": "MCP server for Weixin iLink Bot integration with opencode Desktop sidecar delivery.",
   "type": "module",
   "bin": {
-    "opencode-wechat": "./dist/index.js"
+    "haolab-opencode-wechat": "./dist/index.js"
   },
   "files": [
     "dist",
