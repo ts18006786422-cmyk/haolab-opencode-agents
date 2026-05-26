@@ -1,3 +1,6 @@
-# zuhui-moyu-xiaozhushou
+# 组会摸鱼小助手
 
-Shared opencode agent-session package exported from `ses_19b3684c3ffeK365HMZiObMxJ9`.
+专门负责ppt制作，但是尚不完善，需要成长。
+
+- Package: `zuhui-moyu-xiaozhushou`
+- Source session: `ses_19b3684c3ffeK365HMZiObMxJ9`
