@@ -1,0 +1,18 @@
+{
+  "schema": "opencode-agent-session/v1",
+  "name": "zuhui-moyu-xiaozhushou",
+  "title": "组会摸鱼小助手",
+  "description": "专门负责ppt制作，但是尚不完善，需要成长",
+  "version": "0.1.0",
+  "source_session_id": "ses_19b3684c3ffeK365HMZiObMxJ9",
+  "exported_at": "2026-05-26T17:23:04.700Z",
+  "exported_by": "Tong",
+  "files": [
+    "agenticsciml-deck-context.json",
+    "assemble-schema.md",
+    "assemble.ts",
+    "ppt-collaboration-context.json",
+    "system/README.md",
+    "tool/README.md"
+  ]
+}
