@@ -1,0 +1,23 @@
+{
+  "schema": "opencode-agent-session/v1",
+  "name": "ses_manager_agent",
+  "title": "管理agent",
+  "description": "Manager session template for installing, exporting, and uploading opencode session templates.",
+  "version": "0.1.0",
+  "source_session_id": "ses_manager_agent",
+  "exported_at": "2026-05-25T10:25:45.150Z",
+  "exported_by": "opencode-test",
+  "files": [
+    "assemble-schema.md",
+    "assemble.ts",
+    "context/default-agent-repository.json",
+    "context/manager-agent.json",
+    "context/session-install-workflow.json",
+    "context/session-upload-workflow.json",
+    "system/instructions.txt",
+    "system/README.md",
+    "tool/manage-session.ts",
+    "tool/README.md",
+    "tool/session-dispatch.ts"
+  ]
+}
