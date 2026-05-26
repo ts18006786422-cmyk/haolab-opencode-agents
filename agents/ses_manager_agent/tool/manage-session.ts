@@ -1,5 +1,6 @@
-const managedRoots = ["context", "system", "tool"]
+const managedRoots = ["context", "system", "tool", "resources"]
 const generatedFiles = ["agent.json", "README.md"]
+const ignoredRootJSON = ["metadata.json", "agent-package.json", "agent.json"]
 
 type Args = {
   action?: "export" | "install" | "diff"
@@ -68,12 +69,23 @@ async function copyFile(sourceRoot: string, targetRoot: string, rel: string) {
   await fs.copyFile(path.join(sourceRoot, rel), path.join(targetRoot, rel))
 }
 
+function isManagedFile(file: string) {
+  return (
+    file === "assemble.ts" ||
+    file === "assemble-schema.md" ||
+    (file.endsWith(".json") && !file.includes("/") && !ignoredRootJSON.includes(file)) ||
+    managedRoots.some((root) => file === root || file.startsWith(`${root}/`))
+  )
+}
+
 async function removeManagedPackageFiles(target: string) {
   const fs = await import("node:fs/promises")
   const path = await import("node:path")
+  const rootJSON = (await listFiles(target)).filter((file) => file.endsWith(".json") && !file.includes("/") && !ignoredRootJSON.includes(file))
   await Promise.all([
     ...managedRoots.map((dir) => fs.rm(path.join(target, dir), { recursive: true, force: true })),
     ...generatedFiles.map((file) => fs.rm(path.join(target, file), { force: true })),
+    ...rootJSON.map((file) => fs.rm(path.join(target, file), { force: true })),
     fs.rm(path.join(target, "assemble.ts"), { force: true }),
     fs.rm(path.join(target, "assemble-schema.md"), { force: true }),
   ])
@@ -127,12 +139,7 @@ async function prepareRepository(args: Args, dataDir: string) {
 
 async function packageFiles(packageDir: string) {
   const files = await listFiles(packageDir)
-  return files.filter(
-    (file) =>
-      file === "assemble.ts" ||
-      file === "assemble-schema.md" ||
-      managedRoots.some((root) => file === root || file.startsWith(`${root}/`)),
-  )
+  return files.filter(isManagedFile)
 }
 
 async function exportSession(args: Args, ctx: { directory: string; agent: string }) {
@@ -149,12 +156,7 @@ async function exportSession(args: Args, ctx: { directory: string; agent: string
   await fs.mkdir(target, { recursive: true })
   await removeManagedPackageFiles(target)
 
-  const files = (await listFiles(source)).filter(
-    (file) =>
-      file === "assemble.ts" ||
-      file === "assemble-schema.md" ||
-      managedRoots.some((root) => file.startsWith(`${root}/`)),
-  )
+  const files = (await listFiles(source)).filter(isManagedFile)
   await Promise.all(files.map((file) => copyFile(source, target, file)))
 
   const rawMetadata = await readJSON(path.join(source, "metadata.json"))

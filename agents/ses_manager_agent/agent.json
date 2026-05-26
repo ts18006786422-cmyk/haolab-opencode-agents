@@ -3,9 +3,9 @@
   "name": "ses_manager_agent",
   "title": "管理agent",
   "description": "Manager session template for installing, exporting, and uploading opencode session templates.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "source_session_id": "ses_manager_agent",
-  "exported_at": "2026-05-25T10:25:45.150Z",
+  "exported_at": "2026-05-26T02:45:00.000Z",
   "exported_by": "opencode-test",
   "files": [
     "assemble-schema.md",

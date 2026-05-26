@@ -1,0 +1,10 @@
+{
+  "assemble": true,
+  "name": "fnir-project-resource-guide",
+  "description": "Portable pointer to session-local copied fNIR MATLAB scripts/resources and their README guide.",
+  "updated_at": "2026-05-26T00:00:00+08:00",
+  "updated_by": "agent",
+  "reason": "User asked to copy workspace fNIR files into the sessionID folder and document their roles.",
+  "position": "prefix",
+  "content": "Context file: fnir-project-resource-guide\nDescription: Session-local copied fNIR MATLAB scripts/resources.\nLast updated by: agent on 2026-05-26.\n\nThis session includes a copied reference package of the workspace fNIR MATLAB files under the session directory at relative path: resources/fnir-matlab/.\n\nRead resources/fnir-matlab/README.md for a file-by-file guide and recommended workflow. The copied resources include beta scripts, HuiChuang and Hitachi variants, FC/WTC scripts, epoch WTC, FOI selection, beta outlier-cleaning scripts, fdr helpers, wavelet denoise helper, xjview template resources, and a WTC interest-frequency Excel reference.\n\nImportant: these copied files are reference resources for the session template. For real analysis, inspect the user's current workspace and data files first; do not assume the copied session files are the active analysis files unless the user explicitly says so."
+}
