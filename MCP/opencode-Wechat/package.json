@@ -5,7 +5,7 @@
   "description": "MCP server for Weixin iLink Bot integration with opencode Desktop sidecar delivery.",
   "type": "module",
   "bin": {
-    "haolab-opencode-wechat": "./dist/index.js"
+    "haolab-opencode-wechat": "dist/index.js"
   },
   "files": [
     "dist",
