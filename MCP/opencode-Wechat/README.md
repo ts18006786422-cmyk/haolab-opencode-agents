@@ -6,6 +6,8 @@ Requires Bun because the package entrypoint uses the Bun runtime.
 
 ## Install in opencode
 
+The package is published on npm as `haolab-opencode-wechat`.
+
 Project config example:
 
 ```jsonc
@@ -18,6 +20,12 @@ Project config example:
       "environment": {
         "ILINK_STATE_DIR": ".opencode/ilink-weixin",
         "ILINK_INBOX_DIR": ".opencode/ilink-weixin/inbox",
+        "ILINK_BOT_TOKEN": "{env:ILINK_BOT_TOKEN}",
+        "ILINK_ACCOUNT_ID": "{env:ILINK_ACCOUNT_ID}",
+        "ILINK_BASE_URL": "{env:ILINK_BASE_URL}",
+        "ILINK_USER_ID": "{env:ILINK_USER_ID}",
+        "ILINK_UPDATES_BUF": "{env:ILINK_UPDATES_BUF}",
+        "ILINK_BOT_AGENT": "{env:ILINK_BOT_AGENT}",
         "ILINK_OPENCODE_SESSION_ID": "{env:ILINK_OPENCODE_SESSION_ID}",
         "ILINK_OPENCODE_AGENT": "{env:ILINK_OPENCODE_AGENT}",
         "ILINK_OPENCODE_DIRECTORY": "{env:ILINK_OPENCODE_DIRECTORY}",
@@ -28,13 +36,13 @@ Project config example:
 }
 ```
 
-If installing from a local tarball before publishing:
+If installing from a local tarball instead of npm:
 
 ```jsonc
 "command": ["bunx", "/absolute/path/to/haolab-opencode-wechat-0.1.0.tgz"]
 ```
 
-Restart opencode after changing config.
+Restart opencode after changing config. Do not enable this package together with a local copy of the same MCP server, because both expose the same `ilink_*` tools and can share the same iLink state directory.
 
 ## First login
 
@@ -102,11 +110,16 @@ using the Basic Auth credentials from `sidecar.json`.
 
 - `ILINK_STATE_DIR`: credential and runtime state directory. Defaults to `.opencode/ilink-weixin`.
 - `ILINK_INBOX_DIR`: inbound media directory. Defaults to `.opencode/ilink-weixin/inbox`.
+- `ILINK_BOT_TOKEN`: optional iLink token override. Usually persisted by `ilink_login_wait` instead.
+- `ILINK_ACCOUNT_ID`: optional iLink bot account id override.
+- `ILINK_BASE_URL`: optional iLink API base URL. Defaults to `https://ilinkai.weixin.qq.com`.
+- `ILINK_USER_ID`: optional iLink user id override.
+- `ILINK_UPDATES_BUF`: optional initial iLink sync cursor override.
+- `ILINK_BOT_AGENT`: self-declared bot agent string sent to iLink.
 - `ILINK_OPENCODE_SESSION_ID`: default session for sidecar delivery.
 - `ILINK_OPENCODE_AGENT`: optional agent for delivered prompts.
 - `ILINK_OPENCODE_DIRECTORY`: workspace sent as `x-opencode-directory`.
 - `ILINK_OPENCODE_SIDECAR`: sidecar JSON path. Defaults to macOS Desktop sidecar path.
-- `ILINK_BOT_AGENT`: self-declared bot agent string sent to iLink.
 
 ## Notes
 

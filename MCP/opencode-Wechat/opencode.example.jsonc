@@ -8,6 +8,12 @@
       "environment": {
         "ILINK_STATE_DIR": ".opencode/ilink-weixin",
         "ILINK_INBOX_DIR": ".opencode/ilink-weixin/inbox",
+        "ILINK_BOT_TOKEN": "{env:ILINK_BOT_TOKEN}",
+        "ILINK_ACCOUNT_ID": "{env:ILINK_ACCOUNT_ID}",
+        "ILINK_BASE_URL": "{env:ILINK_BASE_URL}",
+        "ILINK_USER_ID": "{env:ILINK_USER_ID}",
+        "ILINK_UPDATES_BUF": "{env:ILINK_UPDATES_BUF}",
+        "ILINK_BOT_AGENT": "{env:ILINK_BOT_AGENT}",
         "ILINK_OPENCODE_SESSION_ID": "{env:ILINK_OPENCODE_SESSION_ID}",
         "ILINK_OPENCODE_AGENT": "{env:ILINK_OPENCODE_AGENT}",
         "ILINK_OPENCODE_DIRECTORY": "{env:ILINK_OPENCODE_DIRECTORY}",
