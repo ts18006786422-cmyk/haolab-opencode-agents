@@ -1,0 +1,51 @@
+{
+  "input": {
+    "id_column": "id",
+    "question_column": "question",
+    "answer_column": "answer",
+    "group_by_question": true
+  },
+  "api": {
+    "base_url": "https://geerlite.cn/v1",
+    "chat_url": "https://geerlite.cn/v1/chat/completions",
+    "models_url": "https://geerlite.cn/v1/models",
+    "api_key_env": "RATING_API_KEY",
+    "authorization_prefix": "Bearer"
+  },
+  "models": [
+    "gpt-4o-mini"
+  ],
+  "model": {
+    "temperature": 0,
+    "timeout_seconds": 60
+  },
+  "rating": {
+    "global_prompt": "假如你现在是一个专业的心理学创造力领域的评分员，请针对我给你的问题及回答出的答案进行1-5点新颖性和实用性评分，其中对于新颖性的评分，只考虑这个观点是否足够独特、稀有，不用考虑这个观点是否符合道德或法律的规范，也不用考虑该观点是否有实用性；1为一点都不新颖，5为非常新颖，对于实用性的评分，只考虑这个观点能否在现实中可行；1为一点都不实用，5为非常实用，不要让回答的字数多少影响你的评分判断，而是要根据回答内容本身",
+    "batch_size": 20,
+    "max_retries": 3,
+    "retry_sleep_seconds": 2,
+    "dimensions": [
+      {
+        "name": "实用性",
+        "label": "实用性",
+        "prompt": "对于实用性的评分，只考虑这个观点能否在现实中可行，即该想法在现实世界中得以实施和应用的可能性与便利性；1为一点都不实用，5为非常实用",
+        "format": "1-5分整数"
+      },
+      {
+        "name": "新颖性",
+        "label": "新颖性",
+        "prompt": "对于新颖性的评分，只考虑这个观点是否足够独特、稀有，不用考虑这个观点是否符合道德或法律的规范，也不用考虑该观点是否有实用性；1为一点都不新颖，5为非常新颖",
+        "format": "1-5分整数"
+      }
+    ]
+  },
+  "parallel": {
+    "max_workers": 4
+  },
+  "expert_review": {
+    "sample_size": 50,
+    "random_seed": 42,
+    "expert_count": 1,
+    "include_ai_scores": false
+  }
+}
